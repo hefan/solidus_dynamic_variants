@@ -6,7 +6,7 @@ Useful for products with many, many options.
 Dynamic Variant Creation is a better alternative than creating multimillion variant entries for each possible option combination.
 
 Adds a "dynamic variants" checkbox to products which makes the variant creation for the product dynamic.
-Adds a surcharge field to oprion values which contains optional surcharges for a specific option value.
+Adds a surcharge field to option values which contains optional surcharges for a specific option value.
 
 dynamic variant creation:
 - Shows all available options as dropdowns in product screen.
