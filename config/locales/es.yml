@@ -1,0 +1,5 @@
+es:
+  hello: "Hola Mundo"
+  spree:
+    dynamic_variants: "variantes dinámica"
+    surcharge: "recargo"
