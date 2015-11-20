@@ -4,7 +4,8 @@ module DynamicVariants::PopulateByOptionsSupport
   def variant_populate
     order = current_order(create_order_if_necessary: true)
     product = Spree::Product.find(params[:product_id])
-    option_values = Spree::OptionValue.where(id: params[:options].values)
+    option_values_ids = params[:options].present? ? params[:options].values : []
+    option_values = Spree::OptionValue.where(id: option_values_ids)
     variant = product.try_variant option_values
     quantity = params[:quantity].to_i
 

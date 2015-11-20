@@ -2,7 +2,7 @@ module DynamicVariants::ProductConcerns
   extend ActiveSupport::Concern
 
   def try_variant(option_values)
-    return master if options.blank?
+    return master if option_values.blank?
     new_variant = Spree::Variant.new(product: self,
                                      sku: "#{self.sku}-#{(Time.now.to_f * 1000.0).to_i}",
                                      track_inventory: false)
