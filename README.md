@@ -20,7 +20,7 @@ Installation
 Add solidus_dynamic_variants to your Gemfile:
 
 ```ruby
-gem 'solidus_dynamic_variants'
+gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants', branch: 'master'
 ```
 
 Bundle your dependencies and run the installation generator:
