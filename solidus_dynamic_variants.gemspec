@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_dynamic_variants'
-  s.version     = '2.4.0'
+  s.version     = '2.4.1'
   s.summary     = 'create variants when needed'
   s.description = 'show all options as dropdowns in product screen, create needed variant on the fly'
   s.required_ruby_version = '>= 1.9.3'

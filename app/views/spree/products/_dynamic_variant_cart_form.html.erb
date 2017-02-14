@@ -12,7 +12,7 @@
     </table>
     <%= hidden_field_tag "product_id", @product.id %>
 
-    <% if @product.price_in(current_currency) and !@product.price.nil? %>
+    <% if @product.price_for(current_pricing_options) and !@product.price.nil? %>
       <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
 
         <div id="product-price">
@@ -21,7 +21,7 @@
             <span class="price selling" itemprop="price">
               <%= display_price(@product) %>
             </span>
-            <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
+            <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span>
           </div>
         </div>
 
