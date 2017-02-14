@@ -11,7 +11,7 @@ describe Spree::OrdersController, :type => :controller do
 
   describe '#variant_populate' do
     it 'returns 200' do
-      spree_post :variant_populate, product_id: product.id, quantity: 5
+      post :variant_populate, params: { product_id: product.id, quantity: 5 }
       expect(response.response_code).to eq 302
     end
   end
