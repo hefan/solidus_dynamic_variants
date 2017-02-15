@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe Spree::OrdersController, :type => :controller do
-  let(:user) { create(:user) }
-  let(:order) { Spree::Order.create! }
-  let (:product) { create(:product) }
+  let!(:user) { create(:user) }
+  let!(:store) { create(:store) }
+  let!(:order) { create(:order) }
+  let!(:product) { create(:product) }
 
   before do
     allow(controller).to receive_messages(:try_spree_current_user => user)
