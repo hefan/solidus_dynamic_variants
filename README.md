@@ -34,12 +34,11 @@ bundle exec rails g solidus_dynamic_variants:install
 Setup
 -----
 Add Products, Option Types and Option Values.
-Assign Option Types to Product.
 Assign Surcharges for Option Values if needed.
+Assign Option Types to Product.
 Set "dynamic variants?" on Product to true.
 
 Go to Frontend Product Screen, assemble your Options and put it in Cart.
-In Backend Order Creation you still need to create the variant by hand.
 
 
 Caveats
@@ -47,6 +46,8 @@ Caveats
 Assumes the Variant will be combined and sent after ordering (or is digital).
 Therefore: If track inventory is on, the newly created variant will have track_inventory = false.
 The newly created variant will have the same sku like the master variant plus a timestamp.
+
+When you create Orders in Backend you still need to create the variant by hand.
 
 
 Testing
