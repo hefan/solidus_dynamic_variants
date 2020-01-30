@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_dynamic_variants/version.rb'
+  message: Bump SolidusDynamicVariants to %{version}
+  tag: true

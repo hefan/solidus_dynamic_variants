@@ -1,30 +1,35 @@
-# encoding: UTF-8
+# frozen_string_literal: true
+$:.push File.expand_path('lib', __dir__)
+require 'solidus_dynamic_variants/version'
 
 Gem::Specification.new do |s|
-  s.platform    = Gem::Platform::RUBY
-  s.name        = 'solidus_dynamic_variants'
-  s.version     = '2.4.1'
-  s.summary     = 'create variants when needed'
+  s.name = 'solidus_dynamic_variants'
+  s.version = SolidusDynamicVariants::VERSION
+  s.summary = 'create variants when needed'
   s.description = 'show all options as dropdowns in product screen, create needed variant on the fly'
-  s.required_ruby_version = '>= 1.9.3'
+  s.license = 'BSD-3-Clause'
 
-  s.author    = 'stefan hartmann'
-  s.email     = 'stefan@yo-code.de'
+  s.author = 'stefan hartmann'
+  s.email = 'stefan@yo-code.de'
+  s.homepage = 'http://www.wemove.com'
 
-  #s.files       = `git ls-files`.split("\n")
-  #s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.require_path = 'lib'
-  s.requirements << 'none'
+  if s.respond_to?(:metadata)
+    s.metadata["homepage_uri"] = s.homepage if s.homepage
+    s.metadata["source_code_uri"] = s.homepage if s.homepage
+  end
 
-  s.add_dependency 'solidus_core'
+  s.required_ruby_version = '~> 2.4'
 
-  s.add_development_dependency "rspec-rails", "~> 3.2"
-  s.add_development_dependency "simplecov"
-  s.add_development_dependency "sqlite3"
-  s.add_development_dependency "sass-rails"
-  s.add_development_dependency "coffee-rails"
-  s.add_development_dependency "factory_girl"
-  s.add_development_dependency "capybara"
-  s.add_development_dependency "database_cleaner"
-  s.add_development_dependency "ffaker"
+  s.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  end
+  s.test_files = Dir['spec/**/*']
+  s.bindir = "exe"
+  s.executables = s.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  s.require_paths = ["lib"]
+
+  s.add_dependency 'solidus_core', ['>= 2.0.0', '< 3']
+  s.add_dependency 'solidus_support', '~> 0.4.0'
+
+  s.add_development_dependency 'solidus_dev_support'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Spree::Core::Engine.routes.draw do
 
   resources :orders, :except => [:index, :new, :create, :destroy] do
