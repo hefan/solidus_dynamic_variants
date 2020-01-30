@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-Spree::OrdersController.include(DynamicVariants::PopulateByOptionsSupport)
+Spree::OrdersController.include PopulateByOptionsSupport
