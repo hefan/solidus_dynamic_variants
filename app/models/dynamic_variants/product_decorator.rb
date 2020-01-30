@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-module ProductConcerns
-  extend ActiveSupport::Concern
-
+module DynamicVariants::ProductDecorator
   def try_variant(option_values)
     return master if option_values.blank?
 
@@ -25,4 +23,6 @@ module ProductConcerns
     new_variant.save!
     new_variant
   end
+
+  Spree::Product.prepend self
 end

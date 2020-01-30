@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module PopulateByOptionsSupport
-  extend ActiveSupport::Concern
+module DynamicVariants::OrdersControllerDecorator
+  Spree::OrdersController.prepend self
 
   def variant_populate
     @order = current_order(create_order_if_necessary: true)
