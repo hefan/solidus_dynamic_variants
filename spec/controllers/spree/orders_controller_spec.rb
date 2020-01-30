@@ -4,6 +4,8 @@ require 'spec_helper'
 
 describe Spree::OrdersController, type: :controller do
   let!(:user) { create(:user) }
+  let!(:store) { create(:store) }
+  let!(:order) { create(:order) }
   let!(:product) { create(:product) }
 
   before do
