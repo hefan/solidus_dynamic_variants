@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 $:.push File.expand_path('lib', __dir__)
 require 'solidus_dynamic_variants/version'
 

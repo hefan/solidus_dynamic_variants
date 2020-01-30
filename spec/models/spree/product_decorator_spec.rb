@@ -1,22 +1,33 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Spree::Product do
   describe "#try_variant" do
     it "gets a new variant" do
       product = create(:product)
-      ov1 = create(:option_value, :surcharge => 10.0)
-      ov2 = create(:option_value, :surcharge => 20.0)
+      ov1 = create(:option_value, surcharge: 10.0)
+      ov2 = create(:option_value, surcharge: 20.0)
       product.option_types << [ov1.option_type, ov2.option_type]
       variant = product.try_variant [ov1, ov2]
 
       expect(variant).not_to be_nil
+    end
+
+    it "new variant is a master variant" do
+      product = create(:product)
+      ov1 = create(:option_value, surcharge: 10.0)
+      ov2 = create(:option_value, surcharge: 20.0)
+      product.option_types << [ov1.option_type, ov2.option_type]
+      variant = product.try_variant [ov1, ov2]
+
       expect(variant.is_master).to be false
     end
 
     it "returns an already created similar variant" do
       product = create(:product)
-      ov1 = create(:option_value, :surcharge => 10.0)
-      ov2 = create(:option_value, :surcharge => 20.0)
+      ov1 = create(:option_value, surcharge: 10.0)
+      ov2 = create(:option_value, surcharge: 20.0)
       product.option_types << [ov1.option_type, ov2.option_type]
       variant1 = product.try_variant [ov1, ov2]
       variant2 = product.try_variant [ov1, ov2]
@@ -26,8 +37,8 @@ describe Spree::Product do
 
     it "gets nonsimilar new variant after option value surcharge update" do
       product = create(:product)
-      ov1 = create(:option_value, :surcharge => 10.0)
-      ov2 = create(:option_value, :surcharge => 20.0)
+      ov1 = create(:option_value, surcharge: 10.0)
+      ov2 = create(:option_value, surcharge: 20.0)
       product.option_types << [ov1.option_type, ov2.option_type]
       variant1 = product.try_variant [ov1, ov2]
       ov1.surcharge = 11.0
@@ -42,6 +53,5 @@ describe Spree::Product do
 
       expect(variant).to eq(product.master)
     end
-
   end
 end

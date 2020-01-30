@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 Deface::Override.new(
   name: 'admin_option_value_surcharge_header',
   virtual_path: 'spree/admin/option_types/edit',
   insert_before: '[data-hook="option_header"] tr th:last-child',
-  text: '<th><%= Spree.t(:surcharge) %></th>')
+  text: '<th><%= Spree.t(:surcharge) %></th>'
+)
 
 Deface::Override.new(
   name: 'admin_option_value_surcharge_value',
@@ -11,4 +14,5 @@ Deface::Override.new(
   text:
     '<td class="surcharge">
        <%= f.text_field :surcharge, :value => number_to_currency(f.object.surcharge, :unit => "") %>
-     </td>')
+     </td>'
+)

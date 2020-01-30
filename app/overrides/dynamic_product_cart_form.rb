@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Deface::Override.new(
   name: 'dynamic_product_cart_form',
   virtual_path: 'spree/products/show',
@@ -6,4 +8,5 @@ Deface::Override.new(
            <%= render :partial => "dynamic_variant_cart_form" %>
          <% else %>
            <%= render :partial => "cart_form" %>
-         <% end %>')
+         <% end %>'
+)

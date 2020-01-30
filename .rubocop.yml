@@ -1,2 +1,4 @@
 require:
   - solidus_dev_support/rubocop
+Metrics/LineLength:
+  Max: 150
