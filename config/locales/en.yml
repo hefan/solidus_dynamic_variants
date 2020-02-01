@@ -2,4 +2,4 @@ en:
   hello: "Hello world"
   spree:
     dynamic_variants: "Dynamic Variants"
-    surcharge: "Aufpreis"
+    surcharge: "Surcharge"
