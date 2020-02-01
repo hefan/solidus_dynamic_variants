@@ -7,15 +7,21 @@ Dynamic Variant Creation is a better alternative than creating multimillion vari
 
 1. Backend Products:
 Adds a "Dynamic Variants" checkbox to products which makes the variant creation for the product dynamic.
+
 ![Backend Products](https://hefan.github.io/images/be_products.png)
 
+
 2. Backend Options:
-Adds a "Surcharge" field to option values which contains optional surcharges for specific option values.
+Adds a "Surcharge" field to option values which contains optional surcharges for specific options.
+
 ![Backend Options](https://hefan.github.io/images/be_options.png)
+
 
 3. Frontend Product Detail Screen:
 Renders Select Boxes for each Option instead of Radio Buttons for each Variant
+
 ![Frontend Products](https://hefan.github.io/images/fe_products.png)
+
 
 The process of dynamic variant creation in the frontend works like this:
 - Shows all available options as dropdowns in product screen (see above).
