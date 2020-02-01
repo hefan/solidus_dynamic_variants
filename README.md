@@ -5,19 +5,19 @@ This Gems creates variants for a Solidus Shop when needed.
 Useful for products with many, many options.
 Dynamic Variant Creation is a better alternative than creating multimillion variant entries for each possible option combination.
 
-1. Backend Products:
+###### 1. Backend Products:
 Adds a "Dynamic Variants" checkbox to products which makes the variant creation for the product dynamic.
 
 ![Backend Products](https://hefan.github.io/images/be_products.png)
 
 
-2. Backend Options:
+###### 2. Backend Options:
 Adds a "Surcharge" field to option values which contains optional surcharges for specific options.
 
 ![Backend Options](https://hefan.github.io/images/be_options.png)
 
 
-3. Frontend Product Detail Screen:
+###### 3. Frontend Product Detail Screen:
 Renders Select Boxes for each Option instead of Radio Buttons for each Variant
 
 ![Frontend Products](https://hefan.github.io/images/fe_products.png)
