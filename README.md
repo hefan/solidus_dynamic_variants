@@ -5,11 +5,20 @@ This Gems creates variants for a Solidus Shop when needed.
 Useful for products with many, many options.
 Dynamic Variant Creation is a better alternative than creating multimillion variant entries for each possible option combination.
 
-Adds a "dynamic variants" checkbox to products which makes the variant creation for the product dynamic.
-Adds a surcharge field to option values which contains optional surcharges for a specific option value.
+1. Backend Products:
+Adds a "Dynamic Variants" checkbox to products which makes the variant creation for the product dynamic.
+![Backend Products](https://hefan.github.io/images/be_products.png)
 
-dynamic variant creation:
-- Shows all available options as dropdowns in product screen.
+2. Backend Options:
+Adds a "Surcharge" field to option values which contains optional surcharges for specific option values.
+![Backend Options](https://hefan.github.io/images/be_options.png)
+
+3. Frontend Product Detail Screen:
+Renders Select Boxes for each Option instead of Radio Buttons for each Variant
+![Frontend Products](https://hefan.github.io/images/fe_products.png)
+
+The process of dynamic variant creation in the frontend works like this:
+- Shows all available options as dropdowns in product screen (see above).
 - When product is put in cart, the correct variant is created if it doesn't exist yet.
 - The variant will have the price of the product plus the surcharges of its selected option values
 - Existence of a products variant is checked by options and price (if the price is altered a new variant will be created).
@@ -30,16 +39,6 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g solidus_dynamic_variants:install
 ```
-
-
-Setup
------
-Add Products, Option Types and Option Values.
-Assign Surcharges for Option Values if needed.
-Assign Option Types to Product.
-Set "dynamic variants?" on Product to true.
-
-Go to Frontend Product Screen, assemble your Options and put it in Cart.
 
 
 Caveats
