@@ -1,6 +1,8 @@
 SolidusDynamicVariants
 ======================
 
+[![CircleCI](https://circleci.com/gh/hefan/solidus_dynamic_variants.svg?style=svg)](https://circleci.com/gh/hefan/solidus_dynamic_variants)
+
 This Gems creates variants for a Solidus Shop when needed.
 Useful for products with many, many options.
 Dynamic Variant Creation is a better alternative than creating multimillion variant entries for each possible option combination.
