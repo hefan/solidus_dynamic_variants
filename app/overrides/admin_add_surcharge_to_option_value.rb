@@ -4,7 +4,7 @@ Deface::Override.new(
   name: 'admin_option_value_surcharge_header',
   virtual_path: 'spree/admin/option_types/edit',
   insert_before: '[data-hook="option_header"] tr th:last-child',
-  text: '<th><%= Spree.t(:surcharge) %></th>'
+  text: '<th><%= I18n.t("spree.surcharge") %></th>'
 )
 
 Deface::Override.new(

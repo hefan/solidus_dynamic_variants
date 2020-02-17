@@ -8,7 +8,7 @@ Deface::Override.new(
      '<div data-hook="admin_product_form_dynamic_variants">
         <%= f.field_container :dynamic_variants do %>
           <%= f.label :dynamic_variants do %>
-            <%= f.check_box :dynamic_variants %> <%= Spree.t(:dynamic_variants) %>
+            <%= f.check_box :dynamic_variants %> <%= I18n.t("spree.dynamic_variants") %>
           <% end %>
         <% end %>
       </div>'
