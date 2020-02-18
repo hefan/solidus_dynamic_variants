@@ -4,7 +4,7 @@ SolidusDynamicVariants
 [![CircleCI](https://circleci.com/gh/hefan/solidus_dynamic_variants.svg?style=svg)](https://circleci.com/gh/hefan/solidus_dynamic_variants)
 
 This gem creates variants in the solidus shop frontend on the fly when the cart is populated.
-It is meant to be Useful for products with many, many options (like Options for lenses), when dynamic variant creation is a better alternative than creating multimillion variant entries for each possible option combination. The Option Values can alter prices as well.
+It is meant to be useful for products with many, many options (like Options for lenses), when dynamic variant creation is a better alternative than creating multimillion variant entries for each possible option combination. The Option Values can alter prices as well.
 
 #### 1. Backend Products: Adds a "Dynamic Variants" checkbox to products which makes the variant creation for the product dynamic.
 
