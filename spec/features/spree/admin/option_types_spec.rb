@@ -2,13 +2,8 @@
 
 require 'spec_helper'
 
-RSpec.feature "Admin Option Types", js: true do
+describe "Admin Option Types", type: :feature do
   stub_authorization!
-
-  before(:each) do
-    visit spree.admin_path
-    click_link "Products"
-  end
 
   context "update option types" do
     let(:option_type) { create(:option_type) }

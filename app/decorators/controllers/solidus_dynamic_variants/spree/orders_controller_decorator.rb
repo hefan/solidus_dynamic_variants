@@ -3,7 +3,6 @@
 module SolidusDynamicVariants
   module Spree
     module OrdersControllerDecorator
-
       def variant_populate
         @order = current_order(create_order_if_necessary: true)
         product = ::Spree::Product.find(params[:product_id])
