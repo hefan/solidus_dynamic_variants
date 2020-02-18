@@ -5,10 +5,10 @@ require 'spec_helper'
 describe "Admin Products", type: :feature do
   stub_authorization!
 
-  context "update product" do
+  context "when updating product" do
     let(:product) { create(:product) }
 
-    it "should set dynamic variants" do
+    it "set dynamic variants" do
       visit spree.admin_product_path(product)
       page.check("Dynamic Variants")
       click_button "Update"
