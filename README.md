@@ -3,9 +3,8 @@ SolidusDynamicVariants
 
 [![CircleCI](https://circleci.com/gh/hefan/solidus_dynamic_variants.svg?style=svg)](https://circleci.com/gh/hefan/solidus_dynamic_variants)
 
-This Gems creates variants for a Solidus Shop when needed.
-Useful for products with many, many options.
-Dynamic Variant Creation is a better alternative than creating multimillion variant entries for each possible option combination.
+This gem creates variants in the solidus shop frontend on the fly when the cart is populated.
+It is meant to be Useful for products with many, many options (like Options for lenses), when dynamic variant creation is a better alternative than creating multimillion variant entries for each possible option combination. The Option Values can alter prices as well.
 
 #### 1. Backend Products: Adds a "Dynamic Variants" checkbox to products which makes the variant creation for the product dynamic.
 
@@ -48,11 +47,12 @@ bundle exec rails g solidus_dynamic_variants:install
 
 Caveats
 -------
-Assumes the Variant will be combined and sent after ordering (or is digital).
-Therefore: If track inventory is on, the newly created variant will have track_inventory = false.
-The newly created variant will have the same sku like the master variant plus a timestamp.
+Assumes the Variant will be personally created after ordering (or is digital).
+This Means: If track inventory is on, the newly created variant will have track_inventory = false.
 
-When you create Orders in Backend you still need to create the variant by hand.
+The newly created variant will have the same SKU like the master variant plus a timestamp.
+
+When you create Orders in the Backend you still need to create variants by hand.
 
 
 
