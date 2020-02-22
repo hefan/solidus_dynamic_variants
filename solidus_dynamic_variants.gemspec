@@ -6,8 +6,8 @@ require 'solidus_dynamic_variants/version'
 Gem::Specification.new do |s|
   s.name = 'solidus_dynamic_variants'
   s.version = SolidusDynamicVariants::VERSION
-  s.summary = 'create variants when needed'
-  s.description = 'show all options as dropdowns in product screen, create needed variant on the fly'
+  s.summary = 'Create variants on the fly'
+  s.description = 'Creates variants from selected options on the fly during cart populate in your Solidus store'
   s.license = 'BSD-3-Clause'
 
   s.author = 'stefan hartmann'
