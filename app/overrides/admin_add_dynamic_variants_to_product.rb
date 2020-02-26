@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Deface::Override.new(
   name: 'admin_product_dynamic_variants',
   virtual_path: 'spree/admin/products/_form',

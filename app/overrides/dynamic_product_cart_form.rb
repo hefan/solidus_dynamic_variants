@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Deface::Override.new(
   name: 'dynamic_product_cart_form',
   virtual_path: 'spree/products/show',
