@@ -8,17 +8,17 @@ It is meant to be useful for products with many, many options (like Options for 
 
 #### 1. Backend Products: Adds a "Dynamic Variants" checkbox to products which makes the variant creation for the product dynamic.
 
-![Backend Products](https://hefan.github.io/images/be_products.png)
+![Backend Products](https://hefan.github.io/images/be_products_2.png)
 
 
 #### 2. Backend Options: Adds a "Surcharge" field to option values which contains optional surcharges for specific options.
 
-![Backend Options](https://hefan.github.io/images/be_options.png)
+![Backend Options](https://hefan.github.io/images/be_options_2.png)
 
 
 #### 3. Frontend Product Detail Screen: Renders Select Boxes for each Option instead of Radio Buttons for each Variant
 
-![Frontend Products](https://hefan.github.io/images/fe_products.png)
+![Frontend Products](https://hefan.github.io/images/fe_products_2.png)
 
 
 The process of dynamic variant creation in the frontend works like this:
