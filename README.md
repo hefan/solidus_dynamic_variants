@@ -47,7 +47,7 @@ bundle exec rails g solidus_dynamic_variants:install
 
 Caveats
 -------
-Assumes the Variant will be personally created after ordering (or is digital).
+Assumes the customized Variant will be created after ordering (or is digital).
 This Means: If track inventory is on, the newly created variant will have track_inventory = false.
 
 The newly created variant will have the same SKU like the master variant plus a timestamp.
