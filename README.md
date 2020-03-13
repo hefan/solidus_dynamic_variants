@@ -66,7 +66,7 @@ bundle
 bundle exec rake
 ```
 
-When testing your application's integration with this extension you may use its factories.
+When testing your applications integration with this extension you may use its factories.
 Simply add this require statement to your spec_helper:
 
 ```ruby
