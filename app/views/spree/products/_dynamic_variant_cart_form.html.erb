@@ -1,11 +1,22 @@
 <%= form_for :order, :url => variant_populate_orders_path do |f| %>
   <div id="inside-product-cart-form" data-hook="inside_dynamic_variant_product_cart_form">
-
+    <input type="hidden" id="base_price" value="<%= @product.price %>">
     <table>
       <% @product.option_types.each do |ot| %>
         <tr>
           <td><%= ot.presentation  %></td>
-          <td><%= select("options", ot.id, ot.option_values.collect {|ov| [ ov.presentation, ov.id ] }) %></td>
+          <td>
+            <select name="options[<%= ot.id %>]" class="doption-trigger" id="options_<%= ot.id %>">
+              <% ot.option_values.collect do |ov| %>
+                <option value="<%= ov.id %>" data-surcharge="<%= ov.surcharge %>">
+                  <%= ov.presentation %>
+                  <% if ov.surcharge > 0 %>
+                    <%= "(+"+Spree::Money.new(ov.surcharge).format+")" %>
+                  <% end %>
+                </option>
+              <% end %>
+            </select>
+          </td>
         </tr>
       <% end %>
     </table>
@@ -38,4 +49,19 @@
         </div>
     <% end %>
   </div>
+<% end %>
+
+<% content_for :head do %>
+  <script>
+    Spree.ready(function($) {
+      $(".doption-trigger").on("change", function() {
+        let dPrice = parseFloat($("#base_price").val());
+        $(".doption-trigger").each(function() {
+          console.log("surcharge: "+$(this).find(":selected").data("surcharge"));
+          dPrice += parseFloat($(this).find(":selected").data("surcharge"));
+        });
+        $(".price.selling").text("$"+dPrice.toFixed(2));
+      });
+    });
+  </script>
 <% end %>
