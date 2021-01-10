@@ -2,3 +2,5 @@ require:
   - solidus_dev_support/rubocop
 Metrics/LineLength:
   Max: 150
+AllCops:
+  NewCops: disable

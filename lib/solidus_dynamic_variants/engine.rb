@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spree/core'
+require 'solidus_dynamic_variants'
 
 module SolidusDynamicVariants
   class Engine < Rails::Engine
