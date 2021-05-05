@@ -2,7 +2,7 @@
 
 module SolidusDynamicVariants
   class Configuration
-    # Define here the settings for this extensions, e.g.:
+    # Define here the settings for this extension, e.g.:
     #
     # attr_accessor :my_setting
   end

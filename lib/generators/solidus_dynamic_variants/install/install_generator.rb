@@ -6,6 +6,10 @@ module SolidusDynamicVariants
       class_option :auto_run_migrations, type: :boolean, default: false
       source_root File.expand_path('templates', __dir__)
 
+      def copy_initializer
+        template 'initializer.rb', 'config/initializers/solidus_dynamic_variants.rb'
+      end
+
       def add_migrations
         run 'bin/rails railties:install:migrations FROM=solidus_dynamic_variants'
       end

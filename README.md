@@ -1,4 +1,4 @@
-# SolidusDynamicVariants
+# Solidus Dynamic Variants
 ======================
 
 [![CircleCI](https://circleci.com/gh/hefan/solidus_dynamic_variants.svg?style=shield)](https://circleci.com/gh/hefan/solidus_dynamic_variants)
@@ -74,4 +74,4 @@ Simply add this require statement to your spec_helper:
 require 'solidus_dynamic_variants/factories'
 ```
 
-Copyright (c) 2020 stefan hartmann, released under the New BSD License
+Copyright (c) 2021 stefan hartmann, released under the New BSD License
