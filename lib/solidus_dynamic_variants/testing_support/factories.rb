@@ -1,42 +1,40 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :color_option_type, class: 'Spree::OptionType' do
+    name { "color" }
+    presentation { "Color" }
+  end
+
   factory :color_option_value_1, class: 'Spree::OptionValue' do
     name { "blue" }
     presentation { "Blue" }
+    option_type { :color_option_type }
   end
 
   factory :color_option_value_2, class: 'Spree::OptionValue' do
     name { "red" }
     presentation { "Red" }
+    option_type { :color_option_type }
     surcharge { 3.45 }
-  end
-
-  factory :color_option_type, class: 'Spree::OptionType' do
-    name { "color" }
-    presentation { "Color" }
-    after :create do |ot|
-      ot.option_values << [create(:color_option_value_1), create(:color_option_value_2)]
-    end
-  end
-
-  factory :size_option_value_1, class: 'Spree::OptionValue' do
-    name { "m" }
-    presentation { "M" }
-  end
-
-  factory :size_option_value_2, class: 'Spree::OptionValue' do
-    name { "xl" }
-    presentation { "XL" }
-    surcharge { 2.45 }
   end
 
   factory :size_option_type, class: 'Spree::OptionType' do
     name { "size" }
     presentation { "Size" }
-    after :create do |ot|
-      ot.option_values << [create(:size_option_value_1), create(:size_option_value_2)]
-    end
+  end
+
+  factory :size_option_value_1, class: 'Spree::OptionValue' do
+    name { "m" }
+    presentation { "M" }
+    option_type { :size_option_type }
+  end
+
+  factory :size_option_value_2, class: 'Spree::OptionValue' do
+    name { "xl" }
+    presentation { "XL" }
+    option_type { :size_option_type }
+    surcharge { 2.45 }
   end
 
   factory :dynamic_variant_product, class: 'Spree::Product' do
