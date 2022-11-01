@@ -1,0 +1,42 @@
+<%
+  schema_properties = {
+    itemprop: 'offers',
+    itemscope: true,
+    itemtype: 'http://schema.org/Offer'
+  }
+%>
+
+<%= form_for :order, url: @product.dynamic_variants? ? dynamic_cart_line_items_path : cart_line_items_path, html: schema_properties do |f| %>
+  <% if @product.dynamic_variants? %>
+    <table>
+      <% @product.option_types.each do |ot| %>
+        <tr>
+          <td><%= ot.presentation  %></td>
+          <td><%= select("options", ot.id, ot.option_values.collect {|ov| [ ov.presentation, ov.id ] }) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= hidden_field_tag "product_id", @product.id %>
+  <% else %>
+    <% if product_variants_with_options(product).any? %>
+      <div class="variant-container">
+        <% sorted_option_types(product).each_with_index do |option_type, i| %>
+          <div class="variant-selection">
+            <%= render 'cart_line_items/product_selection/option_type', product: product, option_type: option_type, index: i %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= render 'cart_line_items/product_variants', product: product %>
+  <% end %>
+
+  <% if product.price %>
+    <%= render 'cart_line_items/product_submit', product: product %>
+  <% else %>
+    <div id="product-price">
+      <p data-js="price" itemprop="price">
+        <%= t('spree.product_not_available_in_this_currency') %>
+      </p>
+    </div>
+  <% end %>
+<% end %>

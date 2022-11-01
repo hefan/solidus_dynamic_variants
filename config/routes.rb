@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-Spree::Core::Engine.routes.draw do
-  resources :orders, except: [:index, :new, :create, :destroy] do
-    post :variant_populate, on: :collection
-  end
+Rails.application.routes.draw do
+  resources :dynamic_cart_line_items, only: :create
 end
