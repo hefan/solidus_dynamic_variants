@@ -33,9 +33,24 @@ Installation
 
 Add solidus_dynamic_variants to your Gemfile:
 
+For Solidus with classic solidus_frontend https://github.com/solidusio/solidus_frontend/ use v1.0 branch.
+Solidus until v3.1.x uses solidus_frontend as default
+
 ```ruby
-gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants'
+gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants', branch: 'v1.0'
 ```
+
+-------------------------
+TODO: For Solidus with solidus_starter_frontend https://github.com/solidusio/solidus_starter_frontend use master branch.
+Starting from Solidus v3.2.0 solidus_starter_frontend is used as default, but you still can choose solidus_frontend during solidus install.
+
+-------------------------
+
+<!--
+```ruby
+gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants', branch: 'master'
+```
+-->
 
 Bundle your dependencies and run the installation generator:
 
