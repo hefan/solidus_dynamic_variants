@@ -40,18 +40,6 @@ Solidus until v3.1.x uses solidus_frontend as default
 gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants', branch: 'v1.0'
 ```
 
--------------------------
-TODO: For Solidus with solidus_starter_frontend https://github.com/solidusio/solidus_starter_frontend use master branch.
-Starting from Solidus v3.2.0 solidus_starter_frontend is used as default, but you still can choose solidus_frontend during solidus install.
-
--------------------------
-
-<!--
-```ruby
-gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants', branch: 'master'
-```
--->
-
 Bundle your dependencies and run the installation generator:
 
 ```shell
@@ -60,7 +48,47 @@ bundle exec rails g solidus_dynamic_variants:install
 ```
 
 
-Caveats
+-------------------------
+
+## SOLIDUS STARTER FRONTEND
+
+For Solidus with solidus_starter_frontend https://github.com/solidusio/solidus_starter_frontend use master branch.
+Starting from Solidus v3.2.0 solidus_starter_frontend is used as default.
+
+```ruby
+gem 'solidus_dynamic_variants', github: 'hefan/solidus_dynamic_variants', branch: 'master'
+```
+
+Bundle your dependencies and run the installation generator:
+
+```shell
+bundle
+bundle exec rails g solidus_dynamic_variants:install
+```
+
+Form override for product form for solidus_starter_frontend
+-----------------------------------------------------------
+
+With solidus_starter_frontend you have to override the cart form by hand. The idea is that the frontend code will be customized anyway. There are no more deface hooks. 
+
+For a working example you can put the file in */app/views/cart_line_items/_form.html.erb* in the corresponding place to override the default product form file from solidus_starter_frontend. if you do not use dynamic_variants on a product, the normal form will still work also with this file.
+
+This form view example is tested with solidus_starter_frontend in November 2022.
+
+
+Principles of view form to work
+-------------------------------
+
+The basic principles of the product form will work with every frontend.
+
+* form action for dynamic products should be **/dynamic_cart_line_items**
+* each product option type needs to be rendered as select box with the options values id
+* you need a hidden_field with the product id
+
+-------------------------
+
+
+Misc Caveats
 -------
 Assumes the customized Variant will be created after ordering (or is digital).
 This Means: If track inventory is on, the newly created variant will have track_inventory = false.
