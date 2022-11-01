@@ -31,6 +31,8 @@ The process of dynamic variant creation in the frontend works like this:
 Installation
 ------------
 
+**This extension currently only works with solidus_frontend, not with solidus_starter_frontend.**
+
 Add solidus_dynamic_variants to your Gemfile:
 
 For Solidus with classic solidus_frontend https://github.com/solidusio/solidus_frontend/ use v1.0 branch.
